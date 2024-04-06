@@ -15,6 +15,17 @@ const userSchema = mongoose.Schema({
   mentorId: String,
 });
 
-const User = mongoose.model("User", userSchema);
+const facultySchema = mongoose.Schema({
+  name: String,
+  facultyId: String,
+  phoneNumber: Number,
+  email: String,
+  password: String,
+  students: [String],
+  driveLink: String,
+});
 
-module.exports = { User };
+const User = mongoose.model("User", userSchema);
+const Faculty = mongoose.model("Faculty", facultySchema);
+
+module.exports = { User, Faculty };
