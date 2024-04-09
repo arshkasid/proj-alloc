@@ -1,8 +1,7 @@
 const mongoose = require("mongoose");
+require("dotenv").config();
 
-mongoose.connect(
-  "mongodb+srv://arshkasid046:1234@cluster0.txl0ebl.mongodb.net/proj-alloc"
-);
+mongoose.connect(process.env.MONGODB_STRING);
 
 const userSchema = mongoose.Schema({
   name: String,
