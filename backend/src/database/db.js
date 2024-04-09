@@ -25,7 +25,19 @@ const facultySchema = mongoose.Schema({
   driveLink: String,
 });
 
+const requestsSchema = mongoose.Schema({
+  regno:String,
+  facultyId:String,
+  time : { type : Date, default: Date.now },
+  proposal:String,
+  project_name:String,
+  accepted:Boolean
+
+
+})
+
 const User = mongoose.model("User", userSchema);
 const Faculty = mongoose.model("Faculty", facultySchema);
+const Requests = mongoose.model("Requests",requestsSchema)
 
-module.exports = { User, Faculty };
+module.exports = { User, Faculty ,Requests};
